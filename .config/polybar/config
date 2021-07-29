@@ -18,7 +18,7 @@
 
 [colors]
 ;background = ${xrdb:color0:#222}
-background = #801e1e1e
+background = #001e1e1e
 background-alt = #444
 ;foreground = ${xrdb:color7:#222}
 foreground = #dfdfdf
@@ -413,7 +413,7 @@ label-separator-foreground = ${colors.foreground-alt}
 menu-0-0 = reboot
 menu-0-0-exec = systemctl reboot
 menu-0-1 = power off
-menu-0-1-exec = menu-open-2
+menu-0-1-exec = systemctl poweroff
 menu-0-2 = suspend
 menu-0-2-exec = systemctl suspend
 
