@@ -127,3 +127,5 @@ export PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\W\[\033[33m\]$(__gi
 # GLOBAL VARIABLES
 export DOT="/mnt/Stuff/GitHub/dotfiles"
 export DOCS="/mnt/Stuff/Documentos/PDFS"
+export ST="/mnt/Stuff/"
+export PATH="$PATH:$HOME/scripts/"
