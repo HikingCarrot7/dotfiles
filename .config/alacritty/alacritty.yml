@@ -1,6 +1,6 @@
 
 # Configuration for Alacritty, the GPU enhanced terminal emulator.c
-background_opacity: .95
+background_opacity: 0.9
 
 # Import additional configuration files
 #

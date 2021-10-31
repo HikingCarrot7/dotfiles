@@ -18,21 +18,39 @@
 
 [colors]
 ;background = ${xrdb:color0:#222}
-background = #001e1e1e
+background = #64444444
 background-alt = #444
 ;foreground = ${xrdb:color7:#222}
 foreground = #dfdfdf
 foreground-alt = #eee
-primary = #ffb52a
+primary = ##ffb52a
 secondary = #e60053
 alert = #bd2c40
+
+workspace-label-color = #c9a45e
+
+pulseaudio-label-underline-color = #55aa55
+
+keyboard-label-color = #acd8e7
+keyboard-label-underline-color = #97e3fc
+
+filesystem-label-color = #c69539
+filesystem-label-underline-color = #f2a20d
+
+memory-label-color = #4db34d
+memory-label-underline-color = #20df20
+
+cpu-label-color = #d2d22d
+cpu-label-underline-color = #f9f906
+
+calendar-label-underline-color = #808080
 
 [bar/example]
 ;monitor = ${env:MONITOR:HDMI-1}
 width = 100%
 height = 20
 ;offset-x = 1%
-;offset-y = 1%
+;offset-y = 10
 radius = 0.0
 fixed-center = false
 
@@ -48,10 +66,10 @@ border-color = #00000000
 padding-left = 0
 padding-right = 2
 
-module-margin-left = 1
+module-margin-left = 2
 module-margin-right = 2
 
-font-0 = fixed:pixelsize=10;1
+font-0 = fixed:pixelsize=12;1
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = siji:pixelsize=10;1
 font-3 = Font Awesome 5 Free:pixelsize=12;2
@@ -60,12 +78,12 @@ font-5 = Font Awesome 5 Brands:pixelsize=12;2
 
 modules-left = bspwm i3
 modules-center = xwindow spotify
-modules-right = filesystem pulseaudio xkeyboard memory cpu date powermenu
+modules-right = pulseaudio xkeyboard filesystem memory cpu date powermenu
 
-separator = 
+separator = %{F#666}|%{F-}
 
 tray-position = right
-tray-padding = 2
+tray-padding = 3
 ;tray-background = #0063ff
 
 ;wm-restack = bspwm
@@ -103,16 +121,14 @@ type = internal/xkeyboard
 blacklist-0 = num lock
 
 format-prefix = " "
-format-prefix-foreground = ${colors.foreground-alt}
-format-prefix-underline = ${colors.secondary}
+format-prefix-foreground = ${colors.keyboard-label-color}
+format-underline = ${colors.keyboard-label-underline-color}
 
 label-layout = %layout%
-label-layout-underline = ${colors.secondary}
+label-layout-foreground = ${colors.keyboard-label-color}
 
 label-indicator-padding = 2
 label-indicator-margin = 1
-label-indicator-background = ${colors.secondary}
-label-indicator-underline = ${colors.secondary}
 
 [module/filesystem]
 type = internal/fs
@@ -121,8 +137,44 @@ interval = 25
 mount-0 = /
 
 label-mounted =  %free%
+label-mounted-foreground = ${colors.filesystem-label-color}
+label-mounted-underline = ${colors.filesystem-label-underline-color}
+
 label-unmounted = %mountpoint% not mounted
-label-unmounted-foreground = ${colors.foreground-alt}
+
+[module/memory]
+type = internal/memory
+interval = 2
+format-prefix = " "
+format-prefix-foreground = ${colors.memory-label-color}
+format-underline = ${colors.memory-label-underline-color}
+label = %percentage_used%%
+label-foreground = ${colors.memory-label-color}
+
+[module/cpu]
+type = internal/cpu
+interval = 2
+format-prefix = " "
+format-prefix-foreground = ${colors.cpu-label-color}
+format-underline = ${colors.cpu-label-underline-color}
+label = %percentage:2%%
+label-foreground = ${colors.cpu-label-color}
+
+[module/date]
+type = internal/date
+interval = 5
+
+date = " %Y-%m-%d"
+date-alt = 
+
+time = %H:%M
+time-alt = %H:%M:%S
+
+format-prefix = 
+format-prefix-foreground = ${colors.foreground-alt}
+format-underline = ${colors.calendar-label-underline-color}
+
+label = %date% %time%
 
 [module/bspwm]
 type = internal/bspwm
@@ -160,23 +212,25 @@ label-mode-foreground = #000
 label-mode-background = ${colors.primary}
 
 ; focused = Active workspace on focused monitor
-label-focused = %index%
+label-focused = %name%
 label-focused-background = ${colors.background-alt}
 label-focused-underline= ${colors.primary}
+label-focused-foreground = ${colors.workspace-label-color}
 label-focused-padding = 5
 
 ; unfocused = Inactive workspace on any monitor
-label-unfocused = %index%
-label-unfocused-padding = 2
+label-unfocused = %name%
+label-unfocused-padding = 4
+label-unfocused-foreground = ${colors.workspace-label-color}
 
 ; visible = Active workspace on unfocused monitor
-label-visible = %index%
+label-visible = %name%
 label-visible-background = ${self.label-focused-background}
 label-visible-underline = ${self.label-focused-underline}
 label-visible-padding = ${self.label-focused-padding}
 
 ; urgent = Workspace with urgency hint set
-label-urgent = %index%
+label-urgent = %name%
 label-urgent-background = ${colors.alert}
 label-urgent-padding = 2
 
@@ -219,22 +273,6 @@ inherit = module/xbacklight
 type = internal/backlight
 card = intel_backlight
 
-[module/cpu]
-type = internal/cpu
-interval = 2
-format-prefix = " "
-format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #f90000
-label = %percentage:2%%
-
-[module/memory]
-type = internal/memory
-interval = 2
-format-prefix = " "
-format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #4bffdc
-label = %percentage_used%%
-
 [module/wlan]
 type = internal/network
 interface = net1
@@ -273,33 +311,18 @@ format-disconnected =
 ;label-disconnected = %ifname% disconnected
 ;label-disconnected-foreground = ${colors.foreground-alt}
 
-[module/date]
-type = internal/date
-interval = 5
-
-date = " %Y-%m-%d"
-date-alt = 
-
-time = %H:%M
-time-alt = %H:%M:%S
-
-format-prefix = 
-format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #0a6cf5
-
-label = %date% %time%
-
 [module/pulseaudio]
 type = internal/pulseaudio
 
 format-volume = <label-volume> <bar-volume>
+format-volume-underline = ${colors.pulseaudio-label-underline-color}
 label-volume = VOL %percentage%%
 label-volume-foreground = ${root.foreground}
 
-label-muted = 🔇 muted
+label-muted =  muted
 label-muted-foreground = #666
 
-bar-volume-width = 10
+bar-volume-width = 15
 bar-volume-foreground-0 = #55aa55
 bar-volume-foreground-1 = #55aa55
 bar-volume-foreground-2 = #55aa55

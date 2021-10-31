@@ -115,7 +115,8 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-. "$HOME/.cargo/env"
+
+# . "$HOME/.cargo/env"
 
 # https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh
 . ~/.git-prompt.sh
@@ -125,7 +126,7 @@ export PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\W\[\033[33m\]$(__gi
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 # GLOBAL VARIABLES
-export DOT="/mnt/Stuff/GitHub/dotfiles"
+export DOT="/mnt/Stuff/Github/dotfiles"
 export DOCS="/mnt/Stuff/Documentos/PDFS"
 export ST="/mnt/Stuff/"
 export PATH="$PATH:$HOME/scripts/"
