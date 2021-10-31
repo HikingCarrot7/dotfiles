@@ -1,0 +1,15 @@
+#Env vars
+export QT_STYLE_OVERRIDE=kvantum
+
+# Composer
+picom --experimental-backends -f &
+
+# Keyboard Layout
+setxkbmap latam &
+
+# Automount removable devices
+udiskie -t &
+
+# Wallpaper
+nitrogen --restore 
+
