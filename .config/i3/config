@@ -231,8 +231,3 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 #Polybar launch script
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
-#Picom
-exec_always picom --experimental-backends -f &
-
-#Nitrogen
-exec_always nitrogen --restore &
