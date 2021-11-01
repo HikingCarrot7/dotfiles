@@ -5,6 +5,10 @@ export ST="/mnt/Stuff/"
 export PATH=$HOME/.local/bin:$PATH
 export QT_STYLE_OVERRIDE=kvantum
 
+# Fzf
+export FZF_DEFAULT_COMMAND='find .'
+export FZF_CTRL_T_COMMAND='ag --hidden --ignore .git -al'
+
 # Composer
 picom --experimental-backends -f &
 
