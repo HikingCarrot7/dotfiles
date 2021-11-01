@@ -1,0 +1,15 @@
+# Ignore everything
+/*
+!.gitignore
+
+# Except for the files and folders we want to track
+!alacritty
+!htop
+!i3
+!mpd
+!ncmpcpp
+!picom
+!polybar
+!qtile
+!xob
+!starship.toml
