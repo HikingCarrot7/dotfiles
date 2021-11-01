@@ -1,4 +1,8 @@
 #Env vars
+export DOT="/mnt/Stuff/Github/dotfiles"
+export DOCS="/mnt/Stuff/Documentos/PDFS"
+export ST="/mnt/Stuff/"
+export PATH=$HOME/.local/bin:$PATH
 export QT_STYLE_OVERRIDE=kvantum
 
 # Composer
@@ -11,5 +15,5 @@ setxkbmap latam &
 udiskie -t &
 
 # Wallpaper
-nitrogen --restore 
+nitrogen --restore &
 
