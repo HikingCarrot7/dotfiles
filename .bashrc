@@ -100,7 +100,7 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # some more aliases
-alias cat='bat --paging=never'
+alias cat='bat --style=plain --paging=never'
 alias ll='exa --group-directories-first -al'
 alias tree='exa -T'
 

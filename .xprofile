@@ -17,3 +17,5 @@ udiskie -t &
 # Wallpaper
 nitrogen --restore &
 
+# Overlay bar
+xob-pulse-py | xob -s pulse &
