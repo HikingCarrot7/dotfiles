@@ -7,7 +7,6 @@
 from libqtile.config import Key
 from libqtile.command import lazy
 
-
 mod = "mod4"
 
 keys = [Key(key[0], key[1], *key[2:]) for key in [
@@ -18,6 +17,9 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
     ([mod], "k", lazy.layout.up()),
     ([mod], "h", lazy.layout.left()),
     ([mod], "l", lazy.layout.right()),
+
+    # Normalize windows size
+    ([mod], "period", lazy.layout.reset()),
 
     # Change window sizes (MonadTall)
     ([mod, "shift"], "l", lazy.layout.grow()),
@@ -36,10 +38,6 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
 
     # Kill window
     ([mod, "shift"], "q", lazy.window.kill()),
-
-    # Switch focus of monitors
-    ([mod], "period", lazy.next_screen()),
-    ([mod], "comma", lazy.prev_screen()),
 
     # Restart Qtile
     ([mod, "control"], "r", lazy.restart()),

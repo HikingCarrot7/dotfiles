@@ -130,6 +130,7 @@ export DOT="/mnt/Stuff/Github/dotfiles"
 export DOCS="/mnt/Stuff/Documentos/PDFS"
 export ST="/mnt/Stuff/"
 export PATH="$PATH:$HOME/scripts/"
+export PATH=$HOME/.local/bin:$PATH
 
 # Settings the starship prompt
 eval "$(starship init bash)"
