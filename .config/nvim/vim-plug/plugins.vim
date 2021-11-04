@@ -1,14 +1,12 @@
 call plug#begin()
+    " Comment code
+    Plug 'tpope/vim-commentary'
 
     " Syntax support
     Plug 'sheerun/vim-polyglot'
 
     " Autopairs
     Plug 'jiangmiao/auto-pairs'
-
-    " Airline
-    Plug 'vim-airline/vim-airline'
-    Plug 'vim-airline/vim-airline-themes'
 
     " Nerd Tree
     Plug 'scrooloose/NERDTree'
@@ -19,8 +17,18 @@ call plug#begin()
     " Autoclose tags
      Plug 'alvan/vim-closetag'
 
-    " Prettier
-    Plug 'prettier/vim-prettier', { 'do': 'npm install' }
+    " Intellisense
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+    " Show git diff's
+    Plug 'mhinz/vim-signify'
+    
+    " Airline
+    Plug 'vim-airline/vim-airline'
+    Plug 'vim-airline/vim-airline-themes'
+
+    " Ranger in vim!
+    Plug 'kevinhwang91/rnvimr'
 
     " Color schemes
     Plug 'joshdick/onedark.vim'
