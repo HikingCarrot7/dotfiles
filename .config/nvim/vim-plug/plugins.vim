@@ -1,6 +1,13 @@
 call plug#begin()
+    " Indent line
+    Plug 'Yggdroot/indentLine'
+
     " Comment code
     Plug 'tpope/vim-commentary'
+
+    " Fzf
+    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+    Plug 'junegunn/fzf.vim'
 
     " Syntax support
     Plug 'sheerun/vim-polyglot'

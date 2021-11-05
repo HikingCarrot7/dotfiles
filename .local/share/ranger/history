@@ -1,3 +1,8 @@
 shell zathura Manual\ de\ Instalaci\#U00f3n.pdf
 wq
 open_with q
+
+! mkdir jstest2
+s mkdir jstest2
+shell mkdir jstest2
+shell rm -r jstest2

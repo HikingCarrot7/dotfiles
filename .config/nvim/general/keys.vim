@@ -28,6 +28,13 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
-map <Leader>n :bn<cr>
-map <Leader>b :bp<cr>
-map <Leader>d :bd<cr>
+map <Leader>bn :bn<cr>
+map <Leader>bb :bp<cr>
+map <Leader>bd :bd<cr>
+
+if !exists('g:vscode')
+    " TAB in general mode will move to next buffer
+    nnoremap <TAB> :bnext<CR>
+    " SHIFT-TAB will go to prev buffer
+    nnoremap <S-TAB> :bprevious<CR>
+endif
