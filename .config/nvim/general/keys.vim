@@ -28,9 +28,7 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
-map <Leader>bn :bn<cr>
-map <Leader>bb :bp<cr>
-map <Leader>bd :bd<cr>
+map bd :bd<CR>
 
 if !exists('g:vscode')
     " TAB in general mode will move to next buffer

@@ -15,6 +15,7 @@ else
     source $HOME/.config/nvim/plug-config/nerdtree.vim
     source $HOME/.config/nvim/plug-config/prettier.vim
     source $HOME/.config/nvim/plug-config/rnvimr.vim
+    source $HOME/.config/nvim/plug-config/vim-closetag.vim
     source $HOME/.config/nvim/plug-config/vim-commentary.vim
 
 
