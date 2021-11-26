@@ -6,3 +6,4 @@ open_with q
 s mkdir jstest2
 shell mkdir jstest2
 shell rm -r jstest2
+q

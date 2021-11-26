@@ -32,9 +32,14 @@ colors:
     bright_foreground: '0xe6efff'
     foreground: '0xabb2bf'
 font:
+  bold:
+    family: UbuntuMono Nerd Font
+  italic:
+    family: UbuntuMono Nerd Font
   normal:
-    family: Hack Nerd Font
+    family: UbuntuMono Nerd Font
     style: Regular
+  size: 13.0
 window:
   padding:
     x: 5
