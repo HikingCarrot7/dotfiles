@@ -3,6 +3,8 @@
 !.gitignore
 
 # Except for the files and folders we want to track
+!Donwloads
+!Documents
 !.config
 !.local
 !.bash_profile
