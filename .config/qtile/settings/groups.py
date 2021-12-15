@@ -12,7 +12,7 @@ from .keys import mod, keys
 # Get the icons at https://www.nerdfonts.com/cheat-sheet (you need a Nerd Font)
 
 groups = [Group(i) for i in [
-    "   ", "   ", "   ", "   ", " 5 ", " 6 ", " 7 ", " 8 ", " 9 "
+    "   ", "   ", "   ", "   ", " 5 ", " 6 ", " 7 ", " 8 ", "   "
 ]]
 
 for i, group in enumerate(groups):
