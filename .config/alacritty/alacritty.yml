@@ -1,4 +1,3 @@
-background_opacity: 0.95
 colors:
   bright:
     black: '0x5c6370'
@@ -41,6 +40,8 @@ font:
     style: Regular
   size: 13.0
 window:
+  opacity:
+    0.95
   padding:
     x: 5
     y: 5
