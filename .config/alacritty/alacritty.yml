@@ -32,11 +32,11 @@ colors:
     foreground: '0xabb2bf'
 font:
   bold:
-    family: UbuntuMono Nerd Font
+    family: Agave Nerd Font
   italic:
-    family: UbuntuMono Nerd Font
+    family: Agave Nerd Font
   normal:
-    family: UbuntuMono Nerd Font
+    family: Agave Nerd Font
     style: Regular
   size: 13.0
 window:
