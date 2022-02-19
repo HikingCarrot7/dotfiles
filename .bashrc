@@ -103,6 +103,8 @@ fi
 alias cat='bat --style=plain --paging=never'
 alias ll='exa --group-directories-first -al'
 alias tree='exa -T'
+alias lg='lazygit'
+alias ld='lazydocker'
 
 # https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh
 . ~/.git-prompt.sh
@@ -121,3 +123,7 @@ export PATH="$PATH:$GEM_HOME/bin"
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 . "$HOME/.cargo/env"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
