@@ -1,7 +1,42 @@
+set idearefactormode=keep
+set ideajoin
+
+let mapleader = " "
+
 :imap jk <Esc>
+:nmap <C-b> <Action>(ActivateProjectToolWindow)
+:imap <C-b> <Action>(ActivateProjectToolWindow)
+
+:nmap <A-u> <Action>(ToolWindowsActions.HideBottomToolWindows)
+:imap <A-u> <Action>(ToolWindowsActions.HideBottomToolWindows)
 
 " Better window navigation
 :nmap <C-h> <C-w>h
 :nmap <C-j> <C-w>j
 :nmap <C-k> <C-w>k
 :nmap <C-l> <C-w>l
+
+" Move lines up and down
+nnoremap <A-j> :m +1<CR>
+nnoremap <A-k> :m -2<CR>
+inoremap <A-j> <Esc>:m +1<CR>gi
+inoremap <A-k> <Esc>:m -2<CR>gi
+
+" system clipboard
+vmap <leader>y "+y
+vmap <leader>d "+d
+nmap <leader>y "+yy
+nmap <leader>p "+p
+nmap <leader>P "+P
+vmap <leader>p "+p
+vmap <leader>P "+P
+
+" actions
+nmap <leader>h <action>(PreviousTab)
+nmap <leader>l <action>(NextTab)
+nmap <leader>bd <action>(CloseEditor)
+
+set NERDTree
+
+let g:NERDTreeMapActivateNode='l'
+let g:NERDTreeMapJumpParent='h'
